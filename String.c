@@ -2,12 +2,12 @@
 
 #include "String.h"
 
-void* MemoryCopy(const char* from, char* to, int bytes)
+void* MemoryCopy(const void* from, void* to, int bytes)
 {
 	int i;
 
-	const char* fromPtr = from;
-	char* toPtr = to;
+	const char* fromPtr = (const char*) from;
+	char* toPtr = (char*) to;
 
 	for (i = 0; i < bytes; i++)
 	{
@@ -20,12 +20,12 @@ void* MemoryCopy(const char* from, char* to, int bytes)
 	return to;
 }
 
-void* MemoryMove(const char* from, char* to, size_t bytes)
+void* MemoryMove(const void* from, void* to, size_t bytes)
 {
 	int i;
 
-	const char* fromPtr = from;
-	char* toPtr = to;
+	const char* fromPtr = (const char*) from;
+	char* toPtr = (char*) to;
 
 	for (i = 0; i < bytes; i++)
 	{
