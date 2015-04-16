@@ -132,7 +132,7 @@ char* StringNConcatenation(char* str1, const char* str2, size_t n)
 	return str1;
 }
 
-size_t MemoryCompare(const char* str1, const char* str2, size_t num)
+int MemoryCompare(const char* str1, const char* str2, size_t num)
 {
 	int i;
 
@@ -162,7 +162,7 @@ size_t MemoryCompare(const char* str1, const char* str2, size_t num)
 	return result;
 }
 
-size_t StringCompare(const char* str1, const char* str2)
+int StringCompare(const char* str1, const char* str2)
 {
 	const char* s1 = str1;
 	const char* s2 = str2;
@@ -191,7 +191,7 @@ size_t StringCompare(const char* str1, const char* str2)
 	return result;
 }
 
-size_t StringNCompare(const char* str1, const char* str2, size_t num)
+int StringNCompare(const char* str1, const char* str2, size_t num)
 {
 	const char* s1 = str1;
 	const char* s2 = str2;
@@ -221,7 +221,7 @@ size_t StringNCompare(const char* str1, const char* str2, size_t num)
 	return result;
 }
 
-void* MemoryCharacterSearch(const char* str, const size_t value, size_t num)
+void* MemoryCharacterSearch(const char* str, const int value, size_t num)
 {
 	void* ptr = NULL;
 	char cValue = (char) value;
@@ -305,7 +305,7 @@ char* StringLocateCharacter(const char* str1, const char* str2)
 	return result;
 }
 
-char* StringCharacterSearchLast(const char* str, const size_t value)
+char* StringCharacterSearchLast(const char* str, const char value)
 {
 	char* result = NULL;
 
@@ -437,7 +437,7 @@ char* StringToken(char* str, const char* delimiters)
 
 }
 
-char* MemorySet(char* str, size_t value, size_t num)
+char* MemorySet(char* str, int value, size_t num)
 {
 	char* ptr = str;
 	unsigned char cValue = value;
