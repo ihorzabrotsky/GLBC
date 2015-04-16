@@ -31,19 +31,19 @@ char* StringConcatenation(char* str1, const char* str2);
 char* StringNConcatenation(char* str1, const char* str2, size_t n);
 
 /* function for comparing two blocks of memory */
-size_t MemoryCompare(const char* str1, const char* str2, size_t num);
+int MemoryCompare(const char* str1, const char* str2, size_t num);
 
 /* function for comparing two strings */
-size_t StringCompare(const char* str1, const char* str2);
+int StringCompare(const char* str1, const char* str2);
 
 /* function for comparing first num elements of two strings */
-size_t StringNCompare(const char* str1, const char* str2, size_t num);
+int StringNCompare(const char* str1, const char* str2, size_t num);
 
 /* function for finding a character in the block of memory */
-void* MemoryCharacterSearch(const char* str, const size_t value, size_t num);
+void* MemoryCharacterSearch(const char* str, const int value, size_t num);
 
 /* function for finding the first occurrence of a characters in the string */
-char* StringCharacterSearch(const char* str, const size_t value);
+char* StringCharacterSearch(const char* str, const char value);
 
 /* function that returns the size of the initial part of str1 not containing the symbols from str2 */
 size_t StringSpan(const char* str1, const char* str2);
@@ -52,7 +52,7 @@ size_t StringSpan(const char* str1, const char* str2);
 char* StringLocateCharacter(const char* str1, const char* str2);
 
 /* function for finding the last occurrence of a character in the string */
-char* StringCharacterSearchLast(const char* str, const size_t value);
+char* StringCharacterSearchLast(const char* str, const char value);
 
 /* function that returns the size of the initial part of str1 containing the symbols from str2 */
 size_t StringSpanContain(const char* str1, const char* str2);
@@ -67,7 +67,7 @@ char* StringSubstring(const char* str1, const char* str2);
 char* StringToken(char* str, const char* delimiters);
 
 /* function for setting some bytes of memory with a specific value */
-char* MemorySet(char* str, size_t value, size_t num);
+char* MemorySet(char* str, int value, size_t num);
 
 /* function for converting standart c-string to my String */
 void StringConvertToMyString(char* str);
