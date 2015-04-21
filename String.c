@@ -22,17 +22,45 @@ void* MemoryCopy(const void* from, void* to, int bytes)
 
 void* MemoryMove(const void* from, void* to, size_t bytes)
 {
-	int i;
+	const char* fromPtr = (const char*)from;
+	char* toPtr = (char*)to;
 
-	const char* fromPtr = (const char*) from;
-	char* toPtr = (char*) to;
+	int dist = fromPtr > toPtr ? fromPtr - toPtr : toPtr - fromPtr;
 
-	for (i = 0; i < bytes; i++)
+	if (dist > bytes)
 	{
-		*toPtr = *fromPtr;
+		MemoryCopy(from, to, bytes);
+	}
+	else
+	{
+		if (toPtr < fromPtr)
+		{
+			while (bytes)
+			{
+				*toPtr = *fromPtr;
 
-		++toPtr;
-		++fromPtr;
+				++toPtr;
+				++fromPtr;
+
+				--bytes;
+			}
+		}
+		else
+		{
+			toPtr += bytes;
+			fromPtr += bytes;
+
+			while (bytes)
+			{
+				--toPtr;
+				--fromPtr;
+
+				*toPtr = *fromPtr;
+
+				--bytes;
+			}
+
+		}
 	}
 
 	return to;
